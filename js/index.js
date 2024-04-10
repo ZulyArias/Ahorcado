@@ -29,7 +29,6 @@ document.querySelectorAll('.package2').forEach(item => {
         } else if (categoria == 'componentes') {
             palabras = ['motherboard', 'cpu', 'gpu', 'ram', 'ssd', 'hdd', 'psu', 'case', 'cooler', 'modem', 'ethernet'];
         }
-        console.log(palabras)
     });
 });
 
@@ -69,7 +68,6 @@ document.querySelectorAll('.btndiff').forEach(item => {
             }
             document.querySelector('.divContPalabraMostrar').innerHTML = palabraMostrar;
         }
-        console.log(palabra)
     });
 });
 
@@ -77,7 +75,6 @@ document.querySelectorAll('.btndiff').forEach(item => {
 document.querySelectorAll('.btnLetra').forEach(btn => {
     btn.addEventListener('click', event => {
         let letra = event.target.value;
-        console.log(letra);
         audioTecla.play()
 
         // Comprobar si la letra esta en la palabra
@@ -106,7 +103,6 @@ document.querySelectorAll('.btnLetra').forEach(btn => {
             // Si la letra se ha adivinado, agregarla a la lista de teclas usadas
             if (letraAdivinada) {
                 teclasUsadas.push(letra);
-                console.log(teclasUsadas);
             }
 
             document.querySelector('.divContPalabraMostrar').innerHTML = palabraMostrar.join(' ');
