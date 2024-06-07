@@ -212,13 +212,19 @@ document.querySelectorAll('.btnLetra').forEach(btn => {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Pediste :(",
+                text: "Pediste :(," + "\n" +  "la palabra era " + palabra.toUpperCase(),
                 showConfirmButton: false,
+                showCancelButton: true,
+                cancelButtonText: "Volver a jugar",
+                position: 'top',
+                allowOutsideClick: false,
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.cancel) {
+                    window.location.reload()
+                    console.log("Se activó la función");
+                }
             });
             audioLoss.play()
-            setTimeout(() => {
-                window.location.reload();
-            }, 2000);
         }
     });
 });
